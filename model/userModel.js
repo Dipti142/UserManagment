@@ -13,3 +13,5 @@ const userShema = new mongoose.Schema({
 
 //export
 module.exports = mongoose.model('User', userShema);
+
+//model
