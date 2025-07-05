@@ -16,10 +16,7 @@ exports.register = async (req, res) => {
             return res.status(400).json({ message: 'All required fields must be filled.' });
         }
 
-        if (!['user', 'admin'].includes(role)) {
-            return res.status(400).json({ message: 'Role must be user or admin.' });
-        }
-
+       
         const existingUser = await User.findOne({ email });
         if (existingUser) return res.status(409).json({ message: 'Email already registered.' });
 
