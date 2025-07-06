@@ -1,9 +1,11 @@
 
-const express = require('express');
-const user_route = express();
+const express = require("express");
+const router = express.Router();
+const userController = require("../controller/userController");
+const auth = require("../middleware/auth");
 
-const userController = require('../controller/userController'); 
-user_route.get('/register', userController.loadRegister);
+router.post("/register", userController.registerUser);
+router.post("/login", userController.loginUser);
+router.get("/profile", auth, userController.getProfile); // Protected
 
-
-module.exports = user_route;
+module.exports = router;
