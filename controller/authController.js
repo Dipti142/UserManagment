@@ -6,7 +6,7 @@ const { parsePhoneNumber } = require('libphonenumber-js');
 const countries = require('i18n-iso-countries');
 countries.registerLocale(require('i18n-iso-countries/langs/en.json'));
 
-// ===== REGISTER =====
+// ===== REGISTER ================================
 exports.register = async (req, res) => {
     try {
         const { name, countryCode, email, password, role, description } = req.body;
